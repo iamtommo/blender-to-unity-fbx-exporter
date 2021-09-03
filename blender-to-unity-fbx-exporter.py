@@ -132,7 +132,7 @@ def fix_object(ob):
 
 		# Create a copy of the local matrix and set a pure X-90 matrix
 		mat_original = ob.matrix_local.copy()
-		ob.matrix_local = mathutils.Matrix.Rotation(math.radians(-90.0), 4, 'X')
+		ob.matrix_local = mathutils.Matrix.Rotation(math.radians(-90.0), 4, 'X') @ mathutils.Matrix.Rotation(math.radians(-180), 4, 'Z')
 
 		# Apply the rotation to the object
 		apply_rotation(ob)
